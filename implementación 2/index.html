@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio JS</title>
+</head>
+
+<body id="pagina">
+
+<h2>Ingrese un texto</h2>
+
+<input type="text" id="textoUsuario">
+
+<br><br>
+
+<button onclick="cambiarColor()">Cambiar colores</button>
+
+<script>
+
+let estado = 0;
+
+const input = document.getElementById("textoUsuario");
+
+input.addEventListener("keydown", function(event){
+
+    if(event.key === "Enter"){
+        alert(input.value);
+    }
+
+});
+
+function cambiarColor(){
+
+    const body = document.getElementById("pagina");
+
+    estado++;
+
+    if(estado === 1){
+        body.style.backgroundColor = "white";
+        body.style.color = "black";
+    }
+    else if(estado === 2){
+        body.style.backgroundColor = "black";
+        body.style.color = "white";
+    }
+    else if(estado === 3){
+        body.style.backgroundColor = "lightblue";
+        body.style.color = "red";
+        estado = 0;
+    }
+
+}
+
+</script>
+
+</body>
+</html>
